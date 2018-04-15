@@ -5,4 +5,4 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     class="com.murki.flckrdr.FlickrListFragment"
-    tools:layout="@layout/fragment_flickr_list" />
+    tools:layout="@layout/fragment_flickr_list"/>

@@ -3,53 +3,53 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <variable
-            name="viewModel"
-            type="com.murki.flckrdr.viewmodel.FlickrCardVM" />
-    </data>
+  <data>
+    <variable
+        name="viewModel"
+        type="com.murki.flckrdr.viewmodel.FlickrCardVM"/>
+  </data>
 
-    <LinearLayout
-        android:orientation="vertical"
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+    <!-- A CardView that contains a TextView -->
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="200dp"
+        android:layout_margin="3dp"
+        card_view:cardCornerRadius="3dp">
+      <RelativeLayout
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent">
 
-        <!-- A CardView that contains a TextView -->
-        <android.support.v7.widget.CardView
-            android:id="@+id/card_view"
-            android:layout_gravity="center"
+        <ImageView
+            android:id="@+id/flickrPhoto"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_margin="3dp"
-            card_view:cardCornerRadius="3dp">
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:background="@mipmap/ic_launcher"
+            card_view:imageUrl="@{viewModel.ImageUrl}"/>
 
-                <ImageView
-                    android:id="@+id/flickrPhoto"
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:scaleType="centerCrop"
-                    android:background="@mipmap/ic_launcher"
-                    card_view:imageUrl="@{viewModel.ImageUrl}" />
-
-                <TextView
-                    android:id="@+id/info_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignStart="@id/flickrPhoto"
-                    android:layout_alignTop="@id/flickrPhoto"
-                    android:layout_alignEnd="@id/flickrPhoto"
-                    android:layout_alignBottom="@id/flickrPhoto"
-                    android:padding="3dp"
-                    android:gravity="bottom"
-                    android:singleLine="true"
-                    android:textColor="@android:color/white"
-                    android:background="@drawable/gradient_shape"
-                    android:text="@{viewModel.Title}"
-                    tools:text="This is the title of the picture"/>
-            </RelativeLayout>
-        </android.support.v7.widget.CardView>
-    </LinearLayout>
+        <TextView
+            android:id="@+id/info_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/flickrPhoto"
+            android:layout_alignTop="@id/flickrPhoto"
+            android:layout_alignEnd="@id/flickrPhoto"
+            android:layout_alignBottom="@id/flickrPhoto"
+            android:padding="3dp"
+            android:gravity="bottom"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:background="@drawable/gradient_shape"
+            android:text="@{viewModel.Title}"
+            tools:text="This is the title of the picture"/>
+      </RelativeLayout>
+    </android.support.v7.widget.CardView>
+  </LinearLayout>
 </layout>
